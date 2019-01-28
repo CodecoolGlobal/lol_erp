@@ -29,7 +29,7 @@ def start_module():
     """
 
     # your code
-
+    hendel_mian()
 
 def show_table(table):
     """
@@ -124,3 +124,14 @@ def get_average_durability_by_manufacturers(table):
     """
 
     # your code
+
+
+def hendel_mian():
+    options = ["Start",
+               "Show Table****",
+               "Add Record",
+               "Remove Record",
+               "kinds of games",
+               "aferage amount"'\n']
+               
+    ui.print_menu("Store menu", options, "Exit to main")

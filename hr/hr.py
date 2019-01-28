@@ -27,7 +27,7 @@ def start_module():
     """
 
     # your code
-
+    hendel_mian()
 
 def show_table(table):
     """
@@ -122,3 +122,14 @@ def get_persons_closest_to_average(table):
     """
 
     # your code
+
+
+def hendel_mian():
+    options = ["Start",
+               "Show Table++++",
+               "Add Record",
+               "Remove Record",
+               "kinds of games",
+               "aferage amount"'\n']
+               
+    ui.print_menu("Store menu", options, "Exit to main")

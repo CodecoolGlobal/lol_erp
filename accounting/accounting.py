@@ -30,7 +30,7 @@ def start_module():
     """
 
     # you code
-
+    hendel_mian()
 
 def show_table(table):
     """
@@ -126,3 +126,14 @@ def avg_amount(table, year):
     """
 
     # your code
+
+def hendel_mian():
+    options = ["Start",
+               "Show Table",
+               "Add Record",
+               "Remove Record",
+               "kinds of games",
+               "aferage amount"'\n']
+               
+    ui.print_menu("Store menu", options, "Exit to main")
+
