@@ -139,6 +139,6 @@ def hendel_mian():
                "Add Record555555555555555",
                "Remove Record",
                "kinds of games",
-               "aferage amount"'\n']
+               "aferage amount"]
                
-    ui.print_menu("Store menu", options, "Exit to main")
+    ui.print_menu("Store menu", options, "Exit to main'\n'")

@@ -49,7 +49,6 @@ def handle_menu():
 
     ui.print_menu("Main menu", options, "Exit program")
 
-
 def main():
     while True:
         handle_menu()

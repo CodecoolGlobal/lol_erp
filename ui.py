@@ -22,8 +22,43 @@ def print_table(table, title_list):
         None: This function doesn't return anything it only prints to console.
     """
 
-    # your goes code
-    
+    #your goes code
+    print("/" + "-" * (lenght + 3) + "\\")
+    z = 0
+    u = 0
+    print("|" + " " + "id", end="")
+    for title in title_list:
+        print("|" + " " * ((len(longest_words(table)[u]) + 1) - len(title)) + title, end='')
+        u += 1
+    print("|", end="")
+    c = 0
+    print("\n", end="")
+    print("|" + "---", end="")
+    for title in title_list:
+        print("|" + "-" * len(longest_words(table)[c]) + "-", end="")
+        c += 1
+    print("|", end="")
+    print("\n", end="")
+    for element in table:
+        j = 0
+        print("|" + " " + str(z) + " ", end="")
+        z += 1
+
+        for item in element:
+            print("|" + " " * (len(longest_words(table)[j]) - len(item)) + item + " ", end="")
+            j += 1
+        print("|", end="")
+        print('\n', end="")
+        k = 0
+        print("|" + "---", end="")
+        for item in element:
+            print("|" + "-" * len(longest_words(table)[k]) + "-", end="")
+            k += 1
+        print("|", end="")
+        print("\n", end="")
+
+    print("\\" + "-" * (lenght + 3) + "/")
+
 
 def print_result(result, label):
     """
@@ -62,11 +97,11 @@ def print_menu(title, list_options, exit_message):
     """
     # your code
     print(title)
-    i = 0 
+    i = 1
     for element in list_options:
-        print(element)
-        
-    print(exit_message)
+        print("(" + str(i) + ") " + element, sep="")
+        i += 1
+    print("(0)", exit_message)
 
 
 def get_inputs(list_labels, title):

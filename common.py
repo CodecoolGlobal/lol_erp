@@ -4,6 +4,7 @@ implement commonly used functions here
 
 import random
 
+#table = data_manager.get_table_from_file("./accounting/items.csv")
 
 def generate_random(table):
     """
@@ -18,8 +19,7 @@ def generate_random(table):
         string: Random and unique string
     """
 
-    generated = ''
+    checking_ids(table)
 
-    # your code
 
     return generated

@@ -44,7 +44,7 @@ def show_table(table):
     """
 
     # your code
-
+    common.print_only_table(table)
 
 def add(table):
     """
@@ -59,6 +59,8 @@ def add(table):
 
     # your code
 
+    adding_table = common.add_table()
+    table.append(adding_table)
     return table
 
 
@@ -133,7 +135,7 @@ def hendel_mian():
                "Add Record",
                "Remove Record",
                "kinds of games",
-               "aferage amount"'\n']
+               "aferage amount"]
                
-    ui.print_menu("Store menu", options, "Exit to main")
+    ui.print_menu("Store menu", options, "Exit to main'\n'")
 
