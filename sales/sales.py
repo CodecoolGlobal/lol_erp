@@ -59,18 +59,15 @@ def show_table(table):
 def add(table):
     """
     Asks user for input and adds it into the table.
-
     Args:
-        table (list): table to add new record to
-
+        table: table to add new record to
     Returns:
-        list: Table with a new record
+        Table with a new record
     """
 
-    # your code
-
+    adding_table = common.add_table()
+    table.append(adding_table)
     return table
-
 
 def remove(table, id_):
     """
