@@ -104,3 +104,16 @@ def longest_words(table):
 
             i += 1
     return longest_words
+
+
+def add_table():
+    answer = [str(x) for x in input("write somefing :) ").split(',')]
+    return answer
+
+def id_table():
+    id_ = int(input("enter the ID from the table you want to change "))
+    return id_
+
+def sorted_function(item):
+
+    return sorted(item)
