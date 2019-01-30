@@ -17,83 +17,86 @@ import data_manager
 # common module
 import common
 
-
 def start_module():
     """
     Starts this module and displays its menu.
-     * User can access default special features from here.
-     * User can go back to main menu from here.
-
+    User can access default special features from here.
+    User can go back to main menu from here.
     Returns:
         None
     """
 
-    # your code
-    hendel_mian()
+    table = data_manager.get_table_from_file("inventory/inventory.csv")
+    answer = common.hr_sub_menu()
+    if answer == "0":
+        show_table(table)
+    elif answer == "1":
+        add(table)
+    elif answer == "2":
+        id_ = common.id_table()
+        remove(table, id_)
+    elif answer == "3":
+        id_ = common.id_table()
+        update(table, id_)
+    elif answer == "4":
+        get_available_items(table)
+    elif answer == "5":
+        get_average_durability_by_manufacturers(table)
+
 
 def show_table(table):
     """
     Display a table
-
     Args:
-        table (list): list of lists to be displayed.
-
+        table: list of lists to be displayed.
     Returns:
         None
     """
 
-    # your code
+    common.print_only_table(table)
 
 
 def add(table):
     """
     Asks user for input and adds it into the table.
-
     Args:
-        table (list): table to add new record to
-
+        table: table to add new record to
     Returns:
-        list: Table with a new record
+        Table with a new record
     """
 
-    # your code
-
+    adding_table = common.add_table()
+    table.append(adding_table)
     return table
 
 
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
-
     Args:
-        table (list): table to remove a record from
+        table: table to remove a record from
         id_ (str): id of a record to be removed
-
     Returns:
-        list: Table without specified record.
+        Table without specified record.
     """
 
-    # your code
-
+    table.remove(table[id_])
     return table
 
 
 def update(table, id_):
     """
     Updates specified record in the table. Ask users for new data.
-
     Args:
-        table (list): list in which record should be updated
+        table: list in which record should be updated
         id_ (str): id of a record to update
-
     Returns:
-        list: table with updated record
+        table with updated record
     """
 
-    # your code
-
+    answer = common.add_table()
+    table[id_] = answer
     return table
-
 
 # special functions:
 # ------------------
