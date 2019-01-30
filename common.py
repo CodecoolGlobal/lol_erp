@@ -55,27 +55,30 @@ def generate_random(table):
 
 
 def hr_sub_menu():
-    print("""(0)Show table
-             (1)Add
-             (2)Remove
-             (3)Update
-             (4)Get oldest person
-             (5)Get persons closest to average""")
+    print("""(
+        (0)Show table
+        (1)Add
+        (2)Remove
+        (3)Update
+        (4)Get oldest person
+        (5)Get persons closest to average""")
     answer = input("Choose number: ")
     return answer
 
 def store_sub_menu():
-    print("""(0)Show table
-            (1)Add
-            (2)Remove
-            (3)Update
-            (4)Get counts by manufacturers
-            (5)Get average by manufacturers""")
+    print("""
+        (0)Show table
+        (1)Add
+        (2)Remove
+        (3)Update
+        (4)Get counts by manufacturers
+        (5)Get average by manufacturers""")
     answer = input("Choose number: ")
     return answer
 
 def sales_sub_menu():
-    print("""(0)Show table
+    print("""
+        (0)Show table
         (1)Add
         (2)Remove
         (3)Update

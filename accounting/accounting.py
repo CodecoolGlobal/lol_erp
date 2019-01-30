@@ -30,7 +30,7 @@ def start_module():
     """
 
     # you code
-     table = data_manager.get_table_from_file("accounting/items.csv")
+    table = data_manager.get_table_from_file("accounting/items.csv")
     answer = common.hr_sub_menu()
     if answer == "0":
         show_table(table)
