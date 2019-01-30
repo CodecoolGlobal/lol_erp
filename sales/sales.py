@@ -72,34 +72,29 @@ def add(table):
 def remove(table, id_):
     """
     Remove a record with a given id from the table.
-
     Args:
-        table (list): table to remove a record from
+        table: table to remove a record from
         id_ (str): id of a record to be removed
-
     Returns:
-        list: Table without specified record.
+        Table without specified record.
     """
 
-    # your code
-
+    table.remove(table[id_])
     return table
 
 
 def update(table, id_):
     """
     Updates specified record in the table. Ask users for new data.
-
     Args:
-        table (list): list in which record should be updated
+        table: list in which record should be updated
         id_ (str): id of a record to update
-
     Returns:
-        list: table with updated record
+        table with updated record
     """
 
-    # your code
-
+    answer = common.add_table()
+    table[id_] = answer
     return table
 
 
