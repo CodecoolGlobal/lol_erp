@@ -60,7 +60,7 @@ def show_table(table):
     """
 
     # your code
-
+    common.print_only_table(table)
 
 def add(table):
     """
