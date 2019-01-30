@@ -28,7 +28,22 @@ def start_module():
     """
 
     # your code
-    hendel_mian()
+    able = data_manager.get_table_from_file("crm/customers.csv")
+    answer = common.hr_sub_menu()
+    if answer == "0":
+        show_table(table)
+    elif answer == "1":
+        add(table)
+    elif answer == "2":
+        id_ = common.id_table()
+        remove(table, id_)
+    elif answer == "3":
+        id_ = common.id_table()
+        update(table, id_)
+    elif answer == "4":
+        get_longest_name_id(table)
+    elif answer == "5":
+        get_subscribed_emails(table)
 
 def show_table(table):
     """
