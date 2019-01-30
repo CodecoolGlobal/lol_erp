@@ -7,12 +7,8 @@ Data table structure:
     * birth_year (number)
 """
 import common
-<<<<<<< HEAD
-=======
-from data_manager import get_table_from_file
 import data_manager
 
->>>>>>> 7c9b71189ca87ea87a711fb98e862785b9e79494
 
 def start_module():
     """
@@ -22,10 +18,9 @@ def start_module():
     Returns:
         None
     """
-    table = get_table_from_file("hr/persons.csv")
+    table = data_manager.get_table_from_file("hr/persons.csv")
     answer = common.hr_sub_menu()
     if answer == "0":
-        table = data_manager.get_table_from_file("hr/persons.csv")
         show_table(table)
     elif answer == "1":
         add(table)
@@ -39,6 +34,7 @@ def start_module():
         get_oldest_person(table)
     elif answer == "5":
         get_persons_closest_to_average(table)
+
 
 
 def show_table(table):

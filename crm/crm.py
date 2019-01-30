@@ -28,7 +28,7 @@ def start_module():
     """
 
     # your code
-    able = data_manager.get_table_from_file("crm/customers.csv")
+    table = data_manager.get_table_from_file("crm/customers.csv")
     answer = common.hr_sub_menu()
     if answer == "0":
         show_table(table)

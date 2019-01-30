@@ -55,7 +55,7 @@ def generate_random(table):
 
 
 def hr_sub_menu():
-    print("""(
+    print("""
         (0)Show table
         (1)Add
         (2)Remove
