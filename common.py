@@ -23,3 +23,84 @@ def generate_random(table):
 
 
     return generated
+
+
+def hr_sub_menu():
+    print("""(0)Show table
+             (1)Add
+             (2)Remove
+             (3)Update
+             (4)Get oldest person
+             (5)Get persons closest to average""")
+    answer = input("Choose number: ")
+    return answer
+
+def store_sub_menu():
+    print("""(0)Show table
+            (1)Add
+            (2)Remove
+            (3)Update
+            (4)Get counts by manufacturers
+            (5)Get average by manufacturers""")
+    answer = input("Choose number: ")
+    return answer
+
+def sales_sub_menu():
+    print("""(0)Show table
+        (1)Add
+        (2)Remove
+        (3)Update
+        (4)Get lowest price item id
+        (5)Get items sold between""")
+    answer = input("Choose number: ")
+    return answer
+
+
+def print_only_table(table):
+    longest_w = longest_words(table)
+    lenght = table_lenght(longest_w)
+    print("/" + "-" * (lenght + 3) + "\\")
+
+    z = 1
+    for element in table:
+        j = 0
+
+        print("|" + " " + str(z).zfill(2) + " ", end="")
+        z += 1
+
+
+        for item in element:
+            print("|" + " " * (len(longest_w[j]) - len(item)) + item + " ", end="")
+            j += 1
+        print("|", end="")
+        print('\n', end="")
+        k = 0
+        print("|" + "----", end="")
+        for item in element:
+            print("|" + "-" * len(longest_w[k]) + "-", end="")
+            k += 1
+        print("|", end="")
+        print("\n", end="")
+
+    print("\\" + "-" * (lenght + 3) + "/")
+
+def table_lenght(longest_words):
+    lenght = 0
+    for i in range(0, len(longest_words)):
+        lenght += (len(longest_words[i]) + 2)
+    return lenght
+
+
+def longest_words(table):
+    longest_words = []
+    for i in range(0, len(table[0])):
+        longest_words.append("")
+    for element in table:
+        i = 0
+        for item in element:
+            if len(item) > len(longest_words[i]):
+                longest_words[i] = item
+
+
+            i += 1
+    return longest_words
