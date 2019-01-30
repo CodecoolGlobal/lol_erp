@@ -30,7 +30,23 @@ def start_module():
     """
 
     # you code
-    hendel_mian()
+     table = data_manager.get_table_from_file("accounting/items.csv")
+    answer = common.hr_sub_menu()
+    if answer == "0":
+        show_table(table)
+    elif answer == "1":
+        add(table)
+    elif answer == "2":
+        id_ = common.id_table()
+        remove(table, id_)
+    elif answer == "3":
+        id_ = common.id_table()
+        update(table, id_)
+    elif answer == "4":
+        which_year_max(table)
+    elif answer == "5":
+        avg_amount(table, year)
+
 
 def show_table(table):
     """
