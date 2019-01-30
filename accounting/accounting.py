@@ -111,6 +111,8 @@ def update(table, id_):
 
     # your code
 
+    answer = common.add_table()
+    table[id_] = answer
     return table
 
 
