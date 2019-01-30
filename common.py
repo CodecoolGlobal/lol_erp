@@ -17,6 +17,24 @@ def generate():
     return generated
 
 
+
+def checking_ids(table):
+    ids = []
+    for element in table:
+        if element[0]:
+            ids.append(element[0])
+
+    generated = generate()
+
+    while True:
+        if generated in ids:
+            generated = generate()
+        else:
+            break
+
+    return generated
+
+
 def generate_random(table):
     """
     Generates random and unique string. Used for id/key generation:
