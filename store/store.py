@@ -29,7 +29,23 @@ def start_module():
     """
 
     # your code
-    hendel_mian()
+    table = data_manager.get_table_from_file("store/games.csv")
+    answer = common.store_sub_menu()
+    manufacturer = 'Frictional Games'
+    if answer == "0":
+        show_table(table)
+    elif answer == "1":
+        add(table)
+    elif answer == "2":
+        id_ = common.id_table()
+        remove(table, id_)
+    elif answer == "3":
+        id_ = common.id_table()
+        update(table, id_)
+    elif answer == "4":
+        get_counts_by_manufacturers(table)
+    elif answer == "5":
+        get_average_by_manufacturer(table, manufacturer)
 
 
 def show_table(table):
