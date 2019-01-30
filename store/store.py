@@ -93,7 +93,7 @@ def remove(table, id_):
     """
 
     # your code
-
+    table.remove(table[id_])
     return table
 
 
@@ -110,7 +110,8 @@ def update(table, id_):
     """
 
     # your code
-
+    answer = common.add_table()
+    table[id_] = answer
     return table
 
 
@@ -144,14 +145,3 @@ def get_average_by_manufacturer(table, manufacturer):
     """
 
     # your code
-
-def hendel_mian():
-    options = ["Start",
-               "Show Table",
-               "Add Record",
-               "Remove Record",
-               "kinds of games",
-               "aferage amount"]
-               
-    ui.print_menu("Store menu", options, "Exit to main'\n'")
-
