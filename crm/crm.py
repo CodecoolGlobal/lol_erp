@@ -89,7 +89,7 @@ def remove(table, id_):
     """
 
     # your code
-
+    table.remove(table[id_])
     return table
 
 
