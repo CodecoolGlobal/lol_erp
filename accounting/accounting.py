@@ -74,8 +74,10 @@ def add(table):
     """
 
     # your code
-
+    adding_table = common.add_table()
+    table.append(adding_table)
     return table
+
 
 
 def remove(table, id_):
