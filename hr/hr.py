@@ -14,7 +14,6 @@ import ui
 import data_manager
 # common module
 import common
-from data_manager import get_table_from_file
 
 def start_module():
     """
@@ -24,7 +23,7 @@ def start_module():
     Returns:
         None
     """
-    #table = get_table_from_file("hr/persons.csv")
+    table = get_table_from_file("hr/persons.csv")
     answer = common.hr_sub_menu()
     if answer == "0":
         show_table(table)

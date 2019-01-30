@@ -73,6 +73,43 @@ def print_result(result, label):
     """
 
     # your code
+    for element in result:
+        if isinstance(element, dict):
+            for key, value in result:
+                print(key + " " + value)
+        elif isinstance(element, list):
+            for item in result:
+                print(item)
+        elif isinstance(element, str):
+            print(element)
+    print(label)
+
+
+def table_lenght(longest_words):
+    lenght = 0
+    for i in range(0, len(longest_words)):
+        lenght += (len(longest_words[i]) + 2)
+    return lenght
+
+
+def number_of_columns(table):
+    len_columns = len(table)
+    return len_columns
+
+
+def longest_words(table):
+    longest_words = []
+    for i in range (0, len(table[0])):
+        longest_words.append("")
+    for element in table:
+        i = 0
+        for item in element:
+            if len(item) > len(longest_words[i]):
+                longest_words[i] = item
+
+
+            i += 1
+    return longest_words
 
 
 def print_menu(title, list_options, exit_message):
@@ -126,10 +163,13 @@ def get_inputs(list_labels, title):
     inputs = []
 
     # your code
+    inputs = []
     print(title)
     for element in list_labels:
-        inputs.append(input(element))
+        x = input(element + " ")
+        inputs.append(x)
     return inputs
+
 
 
 def print_error_message(message):
@@ -144,3 +184,4 @@ def print_error_message(message):
     """
 
     # your code
+    print(str(message))
