@@ -6,14 +6,13 @@ Data table structure:
     * name (string)
     * birth_year (number)
 """
-
-# everything you'll need is imported:
-# User interface module
-import ui
-# data manager module
-import data_manager
-# common module
 import common
+<<<<<<< HEAD
+=======
+from data_manager import get_table_from_file
+import data_manager
+
+>>>>>>> 7c9b71189ca87ea87a711fb98e862785b9e79494
 
 def start_module():
     """
@@ -26,6 +25,7 @@ def start_module():
     table = get_table_from_file("hr/persons.csv")
     answer = common.hr_sub_menu()
     if answer == "0":
+        table = data_manager.get_table_from_file("hr/persons.csv")
         show_table(table)
     elif answer == "1":
         add(table)
@@ -50,6 +50,7 @@ def show_table(table):
         None
     """
     common.print_only_table(table)
+
 
 def add(table):
     """

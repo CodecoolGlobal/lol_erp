@@ -8,14 +8,15 @@ Data table structure:
     * purchase_year (number): Year of purchase
     * durability (number): Years it can be used
 """
-
-# everything you'll need is imported:
+# importing everything you need
+import os
 # User interface module
 import ui
 # data manager module
 import data_manager
 # common module
 import common
+
 
 def start_module():
     """
@@ -98,8 +99,7 @@ def update(table, id_):
     table[id_] = answer
     return table
 
-# special functions:
-# ------------------
+#special functions
 
 def get_available_items(table):
     """

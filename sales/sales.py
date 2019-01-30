@@ -10,13 +10,15 @@ Data table structure:
     * year (number): Year of the sale
 """
 
-# everything you'll need is imported:
+# importing everything you need
+import os
 # User interface module
 import ui
 # data manager module
 import data_manager
 # common module
 import common
+
 
 def start_module():
     """
@@ -27,6 +29,7 @@ def start_module():
         None
     """
 
+    table = data_manager.get_table_from_file("sales/sales.csv")
     answer = common.sales_sub_menu()
     if answer == "0":
         show_table(table)
@@ -44,7 +47,6 @@ def start_module():
         get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)
 
 
-
 def show_table(table):
     """
     Display a table
@@ -55,6 +57,7 @@ def show_table(table):
     """
 
     common.print_only_table(table)
+
 
 def add(table):
     """
@@ -68,6 +71,7 @@ def add(table):
     adding_table = common.add_table()
     table.append(adding_table)
     return table
+
 
 def remove(table, id_):
     """
@@ -99,6 +103,7 @@ def update(table, id_):
 
 
 # special functions:
+
 # ------------------
 
 def get_lowest_price_item_id(table):
