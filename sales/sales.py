@@ -18,33 +18,43 @@ import data_manager
 # common module
 import common
 
-
 def start_module():
     """
     Starts this module and displays its menu.
-     * User can access default special features from here.
-     * User can go back to main menu from here.
-
+    User can access default special features from here.
+    User can go back to main menu from here.
     Returns:
         None
     """
 
-    # your code
-    hendel_mian()
+    answer = common.sales_sub_menu()
+    if answer == "0":
+        show_table(table)
+    elif answer == "1":
+        add(table)
+    elif answer == "2":
+        id_ = common.id_table()
+        remove(table, id_)
+    elif answer == "3":
+        id_ = common.id_table()
+        update(table, id_)
+    elif answer == "4":
+        get_lowest_price_item_id(table)
+    elif answer == "5":
+        get_items_sold_between(table, month_from, day_from, year_from, month_to, day_to, year_to)
+
+
 
 def show_table(table):
     """
     Display a table
-
     Args:
-        table (list): list of lists to be displayed.
-
+        table: list of lists to be displayed.
     Returns:
         None
     """
 
-    # your code
-
+    common.print_only_table(table)
 
 def add(table):
     """
