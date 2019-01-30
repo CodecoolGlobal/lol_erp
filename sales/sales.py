@@ -135,12 +135,3 @@ def get_items_sold_between(table, month_from, day_from, year_from, month_to, day
 
     # your code
 
-def hendel_mian():
-    options = ["Start",
-               "Show Table",
-               "Add Record555555555555555",
-               "Remove Record",
-               "kinds of games",
-               "aferage amount"]
-               
-    ui.print_menu("Store menu", options, "Exit to main'\n'")
