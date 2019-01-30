@@ -4,7 +4,34 @@ implement commonly used functions here
 
 import random
 
-#table = data_manager.get_table_from_file("./accounting/items.csv")
+import hr
+
+def generate():
+    numbers = '0123456789'
+    lowwerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
+    upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    lowwer = random.choice(lowwerCaseLetters)
+    upper = random.choice(upperCaseLetters)
+    num = random.choice(numbers)
+    generated = num + num + lowwer + lowwer + upper + upper
+    return generated
+
+def checking_ids(table):
+    ids = []
+    for element in table:
+        if element[0]:
+            ids.append(element[0])
+
+    generated = generate()
+
+    while True:
+        if generated in ids:
+            generated = generate()
+        else:
+            break
+
+    return generated
+
 
 def generate_random(table):
     """
