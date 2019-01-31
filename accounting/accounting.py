@@ -74,7 +74,7 @@ def add(table):
         list: Table with a new record
     """
     new_record = []
-    sales_records = ["year: ", "manufacturer: " , "purchase_year: ", "durabelity:  ",]
+    sales_records = ["month: ", "day: " , "year: ", "type", "amount:  "]
     id = common.generate()
     new_record.append(id)
     i = 1
@@ -110,10 +110,12 @@ def remove(table, id_):
     Returns:
         list: Table without specified record.
     """
-
+    new_table = [entry for entry in table if entry[0] != id_]
+    # print("frm remove() -> {}".format(new_table))
+    data_manager.write_table_to_file(file_name="accounting/items.csv", table=new_table)
     # your code
-    table.remove(table[id_])
-    return table
+    #table.remove(table[id_])
+    #return table
 
 
 def update(table, id_):

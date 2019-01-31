@@ -99,9 +99,11 @@ def remove(table, id_):
     Returns:
         Table without specified record.
     """
-
-    table.remove(table[id_])
-    return table
+    new_table = [entry for entry in table if entry[0] != id_]
+    # print("frm remove() -> {}".format(new_table))
+    data_manager.write_table_to_file(file_name="inventory/inventory.csv", table=new_table)
+    #table.remove(table[id_])
+    #return table
 
 
 def update(table, id_):

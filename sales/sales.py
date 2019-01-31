@@ -101,14 +101,16 @@ def remove(table, id_):
     Returns:
         Table without specified record.
     """
-
-    for i in table:
-        if id_ in i[0]:
-            table.remove(i)
-            ui.print_result()
-    if id_ != i[0]:
-        ui.print_error_message('ID not found!')
-    return table
+    new_table = [entry for entry in table if entry[0] != id_]
+    # print("frm remove() -> {}".format(new_table))
+    data_manager.write_table_to_file(file_name="sales/sales.csv", table=new_table)
+    #for i in table:
+    #    if id_ in i[0]:
+    #        table.remove(i)
+    #        ui.print_result()
+    #if id_ != i[0]:
+    #    ui.print_error_message('ID not found!')
+    #return table
     # table.remove(table[id_])
     #return table
 
@@ -122,10 +124,12 @@ def update(table, id_):
     Returns:
         table with updated record
     """
-
-    answer = common.add_table()
-    table[id_] = answer
-    return table
+    new_table = [entry for entry in table if entry[0] != id_]
+    # print("frm remove() -> {}".format(new_table))
+    data_manager.write_table_to_file(file_name="store/games.csv", table=new_table)
+    #answer = common.add_table()
+    #table[id_] = answer
+    #return table
 
 
 # special functions:
