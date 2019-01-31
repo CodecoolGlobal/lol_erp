@@ -31,7 +31,7 @@ def start_module():
     # your code
     table = data_manager.get_table_from_file("store/games.csv")
     answer = common.store_sub_menu()
-    manufacturer = 'Frictional Games'
+    #manufacturer = 'Frictional Games'
     if answer == "0":
         show_table(table)
     elif answer == "1":
@@ -186,6 +186,26 @@ def get_counts_by_manufacturers(table):
     """
 
     # your code
+    manufacturer = []
+    games = []
+    diction = {}
+
+    for element in table:
+        if element[2] not in manufacturer:
+            manufacturer.append(element[2])
+
+    for i in range(len(manufacturer)):
+        for element in table:
+            if element[2] == manufacturer[i]:
+                games.append(element[1])
+        lenght = len(games)
+        diction[manufacturer[i]] = lenght
+
+        games = []
+
+    print(diction)
+    return diction
+
 
 
 def get_average_by_manufacturer(table, manufacturer):
