@@ -39,6 +39,7 @@ def start_module():
     elif answer == "2":
         id_ = common.id_table()
         remove(table, id_)
+        #data_manager.write_table_to_file(file_name="./store/games.csv", table=table)
     elif answer == "3":
         id_ = common.id_table()
         update(table, id_)
@@ -62,6 +63,7 @@ def show_table(table):
     # your code
     common.print_only_table(table)
 
+
 def add(table):
     """
     Asks user for input and adds it into the table.
@@ -74,10 +76,36 @@ def add(table):
     """
 
     # your code
+    new_record = []
+    sales_records = ["title: ", "manufacturer" , "price: ", "in stock: "]
+    id = common.generate()
+    new_record.append(id)
+    i = 1
+    title = input(sales_records[0])
+    new_record.append(title)
+    while i < len(sales_records):
+        integer_inputs = input(sales_records[i])
+        if integer_inputs.isdigit():
+            new_record.append(integer_inputs)
+            i += 1
 
-    adding_table = common.add_table()
-    table.append(adding_table)
-    return table
+        else:
+            print("error!")
+    print(new_record)
+    updated_table = table + [new_record]
+    # print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    # print("updated table: {}".format(updated_table))
+    data_manager.write_table_to_file(file_name="store/games.csv", table=updated_table)
+    
+    return updated_table
+    # titles = ["game", "manofacture", "price", "game in stock"]
+    # #updatedtable = []
+    # zmienna = ui.get_inputs(titles, "co chcesz zapisac")
+    # zmienna.insert(0, common.generate())
+    # print(zmienna)
+    # table.append(zmienna)
+    # data_manager.write_table_to_file('games.csv', table)
+    # return table
 
 
 def remove(table, id_):
@@ -91,9 +119,12 @@ def remove(table, id_):
     Returns:
         list: Table without specified record.
     """
-
+    new_table = [entry for entry in table if entry[0] != id_]
+    # print("frm remove() -> {}".format(new_table))
+    data_manager.write_table_to_file(file_name="store/games.csv", table=new_table)
+    # data_manager.write_table_to_file(file_name="store/games.csv", table=updated_table)
     # your code
-    table.remove(table[id_])
+    # table.remove(table[id_])
     return table
 
 

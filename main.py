@@ -16,7 +16,7 @@ from accounting import accounting
 from sales import sales
 # Customer Relationship Management (CRM) module
 from crm import crm
-
+import common
 
 def choose():
     inputs = ui.get_inputs(["Please enter a number: "], "")
@@ -49,13 +49,17 @@ def handle_menu():
 
     ui.print_menu("Main menu", options, "Exit program")
 
+
 def main():
+    s = common.generate()
+    print(s)
     while True:
         handle_menu()
         try:
             choose()
         except KeyError as err:
             ui.print_error_message(str(err))
+
 
 
 if __name__ == '__main__':

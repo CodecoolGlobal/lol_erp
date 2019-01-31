@@ -67,10 +67,29 @@ def add(table):
     Returns:
         Table with a new record
     """
+    new_record = []
+    sales_records = ["title: ", "price" , "month: ", "day: ","year"]
+    id = common.generate()
+    new_record.append(id)
+    i = 1
+    title = input(sales_records[0])
+    new_record.append(title)
+    while i < len(sales_records):
+        integer_inputs = input(sales_records[i])
+        if integer_inputs.isdigit():
+            new_record.append(integer_inputs)
+            i += 1
 
-    adding_table = common.add_table()
-    table.append(adding_table)
-    return table
+        else:
+            print("error!")
+    print(new_record)
+    updated_table = table + [new_record]
+    data_manager.write_table_to_file(file_name="sales/sales.csv", table=updated_table)
+    
+    return updated_table
+    #adding_table = common.add_table()
+    #table.append(adding_table)
+    #return table
 
 
 def remove(table, id_):
@@ -83,8 +102,15 @@ def remove(table, id_):
         Table without specified record.
     """
 
-    table.remove(table[id_])
+    for i in table:
+        if id_ in i[0]:
+            table.remove(i)
+            ui.print_result()
+    if id_ != i[0]:
+        ui.print_error_message('ID not found!')
     return table
+    # table.remove(table[id_])
+    #return table
 
 
 def update(table, id_):

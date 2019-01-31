@@ -3,8 +3,8 @@ implement commonly used functions here
 """
 
 import random
-
 import hr
+
 
 def generate():
     numbers = '0123456789'
@@ -15,7 +15,6 @@ def generate():
     num = random.choice(numbers)
     generated = num + num + lowwer + lowwer + upper + upper
     return generated
-
 
 
 def checking_ids(table):
@@ -49,7 +48,6 @@ def generate_random(table):
     """
 
     checking_ids(table)
-
 
     return generated
 
@@ -139,11 +137,17 @@ def longest_words(table):
 
 
 def add_table():
-    answer = [str(x) for x in input("write somefing :) ").split(',')]
+    answer = [str(x) for x in ui.get_inputs([""], "write somefing :) ")[0].split(',')]
     return answer
 
+    #answer = []
+    # for x in ui.get_inputs:
+    #    ([""], "write somefing :) ")
+    #
+    #    answer.append(str(x))
+    #
 def id_table():
-    id_ = int(input("enter the ID from the table you want to change "))
+    id_ = input("enter the ID from the table you want to change ")
     return id_
 
 def sorted_function(item):

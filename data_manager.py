@@ -29,6 +29,7 @@ def write_table_to_file(file_name, table):
     Returns:
          None
     """
+    # print('data_menagare --> {}'.format(table))
     with open(file_name, "w") as file:
         for record in table:
             row = ';'.join(record)
