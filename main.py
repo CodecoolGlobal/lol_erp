@@ -18,6 +18,7 @@ from sales import sales
 from crm import crm
 import common
 
+
 def choose():
     inputs = ui.get_inputs(["Please enter a number: "], "")
     option = inputs[0]
@@ -59,7 +60,6 @@ def main():
             choose()
         except KeyError as err:
             ui.print_error_message(str(err))
-
 
 
 if __name__ == '__main__':

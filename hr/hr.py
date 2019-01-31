@@ -94,8 +94,6 @@ def remove(table, id_):
     new_table = [entry for entry in table if entry[0] != id_]
     # print("frm remove() -> {}".format(new_table))
     data_manager.write_table_to_file(file_name="hr/persons.csv", table=new_table)
-    #table.remove(table[id_])
-    #return table
 
 
 def update(table, id_):
@@ -107,8 +105,24 @@ def update(table, id_):
     Returns:
         table with updated record
     """
-    answer = common.add_table()
-    table[id_] = answer
+    for i in table:
+        if id_ == i[0]:
+            update_table = ["Name: ",
+                            "Birth_year: ",]
+            ui.print_menu("What do you want to change?", update_table, "Back to store menu")
+            inputs = ui.get_inputs(["Please enter a number: "], "")
+            option = inputs[0]
+            if option == "0":
+                break
+            updating = ui.get_inputs([update_table[int(option) - 1] + ": "], "")
+            if option == "1":
+                i[1] = updating[0]
+            elif option == "2":
+                i[2] = updating[0]
+            #ui.printresult('Transaction succesfully updated!', '')
+    if id != i[0]:
+        ui.print_error_message("ID do not exist")
+        data_manager.write_table_to_file(file_name="./hr/persons.csv", table=table)
     return table
 
 # special functions:
